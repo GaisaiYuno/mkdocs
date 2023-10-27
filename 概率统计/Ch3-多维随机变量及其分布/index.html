@@ -1,0 +1,1089 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Ch2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Ch3 多维随机变量及其分布 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch3 多维随机变量及其分布
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    概率统计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            概率统计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch1-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%92%8C%E6%A6%82%E7%8E%87/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ch1 随机事件和概率
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ch2 随机变量及其分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ch3 多维随机变量及其分布
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ch3 多维随机变量及其分布
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二维随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二维离散型随机变量及其分布律
+  </a>
+  
+    <nav class="md-nav" aria-label="二维离散型随机变量及其分布律">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分布律和分布函数的关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二维连续型随机变量
+  </a>
+  
+    <nav class="md-nav" aria-label="二维连续型随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    二维均匀分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二维正态分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    二维随机变量的条件分布
+  </a>
+  
+    <nav class="md-nav" aria-label="二维随机变量的条件分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    二维离散型随机变量的条件分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    二维连续型随机变量的条件分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    随机变量的独立性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    $n$ 维随机变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多维随机变量函数的分布
+  </a>
+  
+    <nav class="md-nav" aria-label="多维随机变量函数的分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    多维离散型随机变量函数的分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    多维连续型随机变量函数的分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    多维随机变量函数的联合分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    二维随机变量及其分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二维离散型随机变量及其分布律
+  </a>
+  
+    <nav class="md-nav" aria-label="二维离散型随机变量及其分布律">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分布律和分布函数的关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    二维连续型随机变量
+  </a>
+  
+    <nav class="md-nav" aria-label="二维连续型随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    二维均匀分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    二维正态分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    二维随机变量的条件分布
+  </a>
+  
+    <nav class="md-nav" aria-label="二维随机变量的条件分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    二维离散型随机变量的条件分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    二维连续型随机变量的条件分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    随机变量的独立性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    $n$ 维随机变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    多维随机变量函数的分布
+  </a>
+  
+    <nav class="md-nav" aria-label="多维随机变量函数的分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    多维离散型随机变量函数的分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    多维连续型随机变量函数的分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    多维随机变量函数的联合分布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Ch3 多维随机变量及其分布</h1>
+
+<ul>
+<li><strong>联合分布函数</strong> 和  <strong>边缘分布函数</strong>是什么？</li>
+<li>$F(x,y)=P(X \le x,Y\le y)$.</li>
+<li>$F_X(x)=F(x,+\infin),F_Y(y)=F(+\infin,y)$.</li>
+<li>对于二维离散型随机变量，<strong>联合分布律</strong> 和 <strong>边缘分布律</strong> 是什么？</li>
+<li>$P(x=x_i,y=y_i)=p_{ij}$.</li>
+<li>$P(x=x_i)=\sum_j p_{ij},P(y=y_i)=\sum_i p_{ij}$.</li>
+</ul>
+<h2 id="_1">二维随机变量及其分布</h2>
+<p>设 $E$ 是一个随机试验，$\Omega$ 是其样本空间，若对 $\Omega$ 中的任意一个样本点 $\omega$，按照一定的对应法则，存在一对实数 $(X(\omega),Y(\omega))$ 与之对应，简记为 $(X,Y)$，则称 $(X,Y)$ 为 <strong>二维随机变量</strong>。</p>
+<blockquote>
+<p>例如学生对应 $\omega$，$X(\omega)$ 对应其高数成绩，$Y(\omega)$ 对应其概统成绩。</p>
+</blockquote>
+<p>设 $(X,Y)$ 为二维随机变量，对于任意实数 $x,y$，称定义在实平面上的二元函数 $F(x,y)=P({X \leqslant x} \cap{Y \leqslant y})=P(X \leqslant x,Y \leqslant y)$ 为二维随机变量 $(X,Y)$ 的 <strong>联合分布函数</strong>，简称为分布函数或联合分布。</p>
+<blockquote>
+<p>二维前缀和</p>
+</blockquote>
+<p>其性质：</p>
+<ul>
+<li>
+<p>$0 \leqslant F(x,y) \leqslant 1$，且对于任意固定的 $x,y$，有 $F(-\infty,y)=0,\quad F(x,-\infty)=0,\quad F(-\infty,-\infty)=0,\quad F(+\infty,+\infty)=1$</p>
+</li>
+<li>
+<p>对 $F(x,y)$ 固定其中一个变量，它关于另一个变量是单调不减的函数，即：</p>
+</li>
+<li>
+<p>对于任意固定的 $y$，当 $x_{1}&lt;x_{2}$ 时，$F\left(x_{1},y\right) \leqslant F\left(x_{2},y\right)$;</p>
+</li>
+<li>
+<p>对于任意固定的 $x$，当 $y_{1}&lt;y_{2}$ 时，$F\left(x,y_{1}\right) \leqslant F\left(x,y_{2}\right)$.</p>
+</li>
+<li>
+<p>对 $F(x,y)$ 固定其中一个变量，它关于另一个变量是右连续函数，即
+  $$
+  F(x+0,y)=F(x,y), \quad F(x,y+0)=F(x,y).
+  $$</p>
+</li>
+<li>
+<p>对任意实数 $a,b,c,d$，且 $a&lt;b,c&lt;d$，下述结论成立：
+  $$
+  F(b,d)-F(a,d)-F(b,c)+F(a,c)=P(a&lt;X \le b,c &lt; Y \le d) \ge0
+  $$</p>
+</li>
+</ul>
+<blockquote>
+<p>tips: 相当于容斥原理，注意不等号能不能去到</p>
+<p>作为二元函数是否能够成为某个二维随机变量的分布函数的判断条件。</p>
+</blockquote>
+<ul>
+<li>$P(X&gt;a,Y&gt;c)=P(a&lt;X &lt; +\infin,c&lt;Y&lt; +\infin)=1-F(+\infty,c)-F(a,+\infty)+F(a,c)$</li>
+</ul>
+<p>设二维随机变量 $(X,Y)$ 的分布函数为 $F(x,y)$，分量 $X$ 和 $Y$ 也都是随机变量，各自的分布函数分别记为 $F_{X}(x)$ 和 $F_{Y}(y)$，并依次称为随机变量 $(X,Y)$ 关于 $X$ 和 $Y$ 的 <strong>边缘分布函数</strong>.</p>
+<p>由分布函数的定义可得联合分布函数和边缘分布函数的关系，
+$$
+F_X(x)=P(X \le x)=P(X\le x ,Y\le +\infin)=F(x,+\infin)
+$$
+同理可得
+$$
+F_Y(y)=F(+\infin,y)
+$$
+一般地，我们可以根据分布函数求边缘分布函数 $F_{X}(x)$ 和 $F_{Y}(y)$，<strong>反之不然</strong>.</p>
+<h2 id="_2">二维离散型随机变量及其分布律</h2>
+<h3 id="_3">定义</h3>
+<p>随机变量 $(X,Y)$ 在二维平面上所有可能的取值为有限对或 <strong>可列</strong> 无穷对，则称 $(X,Y)$ 为 <strong>二维离散型随机变量</strong>。(和一维的情况差不多)</p>
+<p>设二维随机变量 $(X,Y)$ 的所有可能取值为 $\left(x_{i},y_{j}\right)$，$i,j=1,2,\cdots$，则称 $P\left(X=x_{i},Y=y_{j}\right)=p_{i j}$，$i,j=1,2,\cdots$ 为二维离散型随机变量 $(X,Y)$ 的联合分布律或联合分布列，简称为 <strong>分布律</strong>。</p>
+<h3 id="_4">性质</h3>
+<p><img alt="image-20231009211739684" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231009211739684.png" /></p>
+<p>容易看出分布律具有如下性质：</p>
+<ul>
+<li>
+<p>（非负性）$p_{i j} \geqslant 0(i,j=1,2,\cdots)$;</p>
+</li>
+<li>
+<p>（规范性）$\sum_{i} \sum_{j} p_{i j}=1$.</p>
+</li>
+</ul>
+<p>若某数列 $p_{i j}(i,j=1,2,\cdots)$ 满足上述两条性质，就可以作为某个二维离散型随机变量的分布律。</p>
+<h3 id="_5">分布律和分布函数的关系</h3>
+<p>二维离散型随机变量的分布函数与分布律互为确定，其分布函数可按下式求得：
+$$
+F(x,y)=\sum_{x_i \le x} \sum_{y_i \le y} p_{ij}
+$$
+容易知道，二维离散型随机变量的两个分量均为离散型随机变量，且其分布律分别如下所示：
+$$
+\begin{array}{l}
+P\left(X=x_{i}\right)=\sum_{ji} p_{i j} \triangleq p_{i \cdot} ,i=1,2,\cdots\
+P\left(Y=y_{j}\right)=\sum_{i} p_{i j} \triangleq p_{\cdot j},j=1,2,\cdots
+\end{array}
+$$
+分别称 $P\left(X=x_{i}\right)$ 和 $P\left(Y=y_{j}\right)$ 为 $(X,Y)$ 关于 $X$ 和关于 $Y$ 的 <strong>边缘分布律</strong>。</p>
+<h2 id="_6">二维连续型随机变量</h2>
+<p>定义：对于二维随机变量 $(X,Y)$ 的分布函数 $F(x,y)$，如果存在一个二元<strong>非负可积</strong>函数 $f(x,y)$，使得对于任意一对实数 $(x,y)$，有
+$$
+F(x,y)=\int_{-\infin}^x \int_{-\infin}^y f(u,v)\mathrm d u\mathrm d v
+$$
+成立，则称 $(X,Y)$ 为二维连续型随机变量，并称 $f(x,y)$ 为 $(X,Y)$ 的 <strong>联合概率密度函数</strong>，简称联合概率密度或联合密度。满足以下性质：</p>
+<ul>
+<li>非负性：$f(x,y) \ge 0$.</li>
+<li>规范性.</li>
+</ul>
+<p>若二元函数 $f(x,y)$ 满足以上两条性质，就可以作为某个二维随机变量 $(X,Y)$ 的联合概率密度。可以用于计算落于某区间 $D$ 的概率：
+$$
+P((X,Y)\in D)=\iint_D f(x,y) \mathrm d x \mathrm d y
+$$
+在 $f(x,y)$ 的 <strong>连续点</strong> 处，有：
+$$
+\frac{\partial ^2 F(x,y)}{\partial x \partial y}=f(x,y)
+$$</p>
+<h3 id="_7">二维均匀分布</h3>
+<p>如果二维随机变量 $(X,Y)$ 在二维有界区域 $G$ 上取值，且它的联合概率密度为
+$$
+f(x,y)=\left{
+\begin{aligned}
+&amp;\frac{1}{G的面积}, &amp;(x,y )\in G,\
+&amp;0, &amp;其它 
+\end{aligned}
+\right.
+$$
+则称 $(X,Y)$ 服从 $G$ 上的均匀分布。</p>
+<h3 id="_8">二维正态分布</h3>
+<p>如果二维随机变量 $(X,Y)$ 的联合概率密度为
+$$
+f(x,y)=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \exp \left{-\frac{1}{2\left(1-\rho^{2}\right)}\left[\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}}\right]\right}
+$$
+其中 $\mu_1,\mu_2,\sigma_1,\sigma_2,\rho$ 为常数，则称 $(X,Y)$ 服从二维正态分布，记为：
+$$
+(X,Y) \sim N\left(\mu_{1},\sigma_{1}^{2};\mu_{2},\sigma_{2}^{2};\rho\right)
+$$
+通过积分得边缘概率密度为：
+$$
+f_X(x)=\frac{1}{\sqrt{2\pi} \sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}, f_Y(y)=\frac{1}{\sqrt{2\pi} \sigma_2} e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}
+$$
+所以 $X \sim N(\mu_1,\sigma_1^2),Y \sim N(\mu_2,\sigma_2^2)$——不依赖于参数 $\rho$.</p>
+<p>因此，仅有关于 $X$ 和 $Y$ 的边缘分布，一般来说不能确定随机变量 $(X,Y)$ 的联合分布。</p>
+<p>验证 $\rho=0$ 时 $X,Y$ 相互独立？使得 $f(x,y)=f_X(x)f_Y(y)$.</p>
+<hr />
+<p>通过联合概率密度函数：
+$$
+f(x,y)=\frac{1}{2\pi} e^{-(x^2+y^2)/2} (1+\sin x\sin y), -\infin &lt;x &lt;+\infin,-\infin &lt;y &lt;+\infin
+$$
+ 求边缘概率密度 $f_X(x)$ 和 $f_Y(y)$.</p>
+<p>由边缘概率密度的公式，可以得到：
+$$
+f_X(x)=\int_{-\infin}^{+\infin} \frac{1}{2\pi} e^{-(x^2+y^2)/2} (1+\sin x\sin y) \mathrm d y= \frac{1}{2\pi} e^{-x^2/2} \int_{-\infin}^{+\infin} e^{-y^2/2} \mathrm d  y= \frac{1}{\sqrt{2\pi}} e^{-x^2/2}
+$$
+甚至可以加上这种相互抵消的部分，原因是 $e^{-y^2/2} \sin y$ 是 <strong>奇函数</strong>。</p>
+<h2 id="_9">二维随机变量的条件分布</h2>
+<p>例如，研究儿童发育情况，需要了解在给定身高下体重的分布、给定体重下身高的分布。 </p>
+<h3 id="_10">二维离散型随机变量的条件分布</h3>
+<p>设有二维离散型随机变量 $(X,Y)$，对于固定的 $j$，若 $P(Y=y_i)&gt;0$，则称
+$$
+P(X=x_i \mid Y=y_i) = \frac{P(X=x_i,Y=y_i)}{P(Y=y_i)}= \frac{p_{ij}}{p_{\cdot j}} , i=1,2,\cdots
+$$
+为在 ${Y=y_i}$ 的条件下 $X$ 的条件分布律。</p>
+<p>满足的性质：</p>
+<ul>
+<li>非负性，$P(X=x_i \mid Y=y_i)\ge 0$.</li>
+<li>全部情况，$\sum_i P(x=x_i \mid Y=y_i)=1$.</li>
+<li>乘法公式，$P(X=x_i,Y=y_i)=P(X=x_i \mid Y=y_i) P(Y=y_i)$.</li>
+<li>全概率公式，$P(X=x_i)=\sum_j P(Y=y_i) P(X=x_i \mid Y=y_i)$.</li>
+</ul>
+<h3 id="_11">二维连续型随机变量的条件分布</h3>
+<p>在连续型的情况下，$P(X=x_i,Y=y_i)$ 和 $P(Y=y_i)$ 都为零，因此不能这么计算。</p>
+<p>引入：设平面区域 $G={(x,y) \mid x^2+y^2 \le r^2}$，求条件概率密度 $f_{X\mid Y}(x\mid y)$.</p>
+<p>当 $-r &lt; x &lt;r$ 的情况下，当 $x$ 给定，随机变量 $Y$ 在 $(-\sqrt{r^2-x^2},\sqrt{r^2+x^2})$ 内服从均匀分布，因此
+$$
+f_{Y\mid X} (y\mid x) = \left{
+\begin{aligned}
+&amp;\frac{1}{2\sqrt{r^2-x^2}}, &amp;-\sqrt{r^2-x^2} &lt; y &lt;\sqrt{r^2-x^2},\
+&amp;0,&amp;其他,
+\end{aligned}
+\right.
+$$
+可以得到：
+$$
+f_{X\mid Y }(x\mid y)=\frac{f(x,y)}{f_Y(y)}
+$$
+如何理解，在 $f_Y(y)$ 的这么多情况中，取到 $f(x,y)$ 的概率。</p>
+<p>称：
+$$
+F_{X \mid Y} (x\mid y)=\int_{-\infin}^x f_{X\mid Y}(u\mid y) \mathrm d u=\int_{-\infin}^x \frac{f(u,y)}{f_Y(y)} \mathrm d u
+$$
+为在 $Y=y$ 条件下 $X$ 的条件分布函数。</p>
+<hr />
+<p>这个公式反过来用，可以通过条件概率密度函数和边缘分布函数计算得到联合分布概率密度函数。
+$$
+f(x,y)=f_{X\mid Y}(x\mid y)f_Y(y)
+$$</p>
+<hr />
+<p><img alt="image-20231019091738061" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231019091738061.png" /></p>
+<p>如果画图，很容易得出是在 $Y&gt;0$ 的面积中 $X&gt;1/2,Y&gt;0$ 的部分所占的比例。</p>
+<h2 id="_12">随机变量的独立性</h2>
+<p>可能出现这样的分布，其中 $X$ 的取值不影响 $Y$，$Y$ 的取值也不影响 $X$，这种情况 $X,Y$ 相互独立，这里给出两个随机变量相互独立的定义：</p>
+<ul>
+<li>
+<p><strong>连续型</strong>：设 $(X,Y)$ 是二维随机变量，若对于任意实数 $x,y$，都有 $P(X\le x,Y\le y)=P(X\le x )P(Y \le y)$，则称 $X$ 与 $Y$ 相互独立。<strong>联合分布律等于边缘分布律的乘积，联合概率密度等于边缘概率密度的乘积</strong></p>
+</li>
+<li>
+<p><strong>离散型</strong>：$P(X=x_i,Y=y_i)=P(X=x_i)P(Y=y_i)$. 即 $p_{ij}=p_{i\cdot}p_{\cdot j}$.</p>
+</li>
+</ul>
+<hr />
+<p>如果相互独立，则：
+$$
+f_X(x)=f_{X\mid Y} (x\mid y) \
+f_Y(y)=f_{Y\mid X} (y \mid x)
+$$
+是因为 $f_{X\mid Y}(x \mid y)=f(x,y)/f_Y(y)=f_X(x)$.</p>
+<hr />
+<p>如果 $X,Y$ 相互独立，$g(x)$ 和 $h(y)$ 是两个确定函数，则 $g(X)$ 和 $h(Y)$ 也相互独立。</p>
+<p><img alt="image-20231027200020006" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231027200020006.png" /></p>
+<p>计算出：
+$$
+P(X=1,Y=n),P(X=0,Y=n);\
+P(X=1),P(X=0);\
+P(Y=n)
+$$
+验证相乘结果即可。</p>
+<hr />
+<p><img alt="image-20231027200657069" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231027200657069.png" /></p>
+<p>先计算边缘分布函数：</p>
+<p>对于 (1)：
+$$
+f_X(x)=\int_{x^2} ^1 6xy \mathrm d y=3x(1-x^4) \quad \mathrm{for} -1 &lt;x&lt;1\
+f_Y(y)=\int_{0}^{\sqrt{y}} 6xy \mathrm d x=3y^2 \quad \mathrm{for} 0&lt;y&lt;1
+$$
+因此显然不独立。</p>
+<p>对于 (2)：</p>
+<p>可以发现 $f(x,y)=2x \cdot 2y$，应该是独立的。</p>
+<hr />
+<p><strong>独立性定理</strong> 设 $(X,Y)$ 是二维连续型随机变量，$f(x,y)$ 是 $(X,Y)$ 的联合概率密度，则 $X$ 与 $Y$ 相互独立的充分必要条件是存在非负可积函数 $r(x)$ 和 $g(y)$，使得：
+$$
+f(x,y)=r(x)g(y)
+$$
+在一切连续点上成立，此时：
+$$
+f_X(x)= \frac{r(x)}{\int_{-\infin}^{+\infin} r(x) \mathrm d x}, f_Y(y)=\frac{g(y)}{\int_{-\infin}^{+\infin} g(y)\mathrm d y}
+$$</p>
+<h2 id="n">$n$ 维随机变量</h2>
+<p><strong>分布函数的定义</strong> 设 $(X_1,X_2,\cdots,X_n)$ 为 $n$ 维随机变量，对于任意 $x_1,x_2 \cdots,x_n \in \R$，称 $F(x_1,x_2,\cdots,x_n)=P(X_1 \le x_1,X_2 \le x_2,\cdots, X_n \le x_n)$ 为 $n$ 维随机变量 $(X_1,X_2,\cdots,X_n)$ 的 <strong>联合分布函数</strong>。</p>
+<p><strong>$k$ 维边缘分布函数</strong> $(X_1,X_2,\cdots,X_n)$ 里面取 $k$ 个变量，构成的边缘分布函数。</p>
+<p><strong>独立性</strong> 联合分布函数等于一维边缘分布函数的乘积。</p>
+<p><strong>$n$ 离散型随机变量</strong> 当变量的取值有限或可列时，称为离散型随机变量。</p>
+<p><strong>独立性</strong> $P(X_1=x_1,X_2=x_2,\cdots,X_n=x_n)=P(X_1=x_1)P(X_2=x_3)\cdots P(X_n=x_n)$.</p>
+<p><img alt="image-20231027202720668" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231027202720668.png" /></p>
+<p><strong>独立性</strong> $n$ 维随机型连续随机变量 $(X_1,X_2,\cdots,X_n)$ 的 $n$ 个分量相互独立的充分必要条件是：在任意连续点 $(x_1,x_2,\cdots,x_n)$ 处有：
+$$
+f(x_1,x_2,\cdots,x_n)=f_{X_1}(x_1) f_{X_2}(x_2) \cdots f_{X_n} (x_n)
+$$
+其中 $x_1,x_2,\cdots,x_n \in \R$.</p>
+<h2 id="_13">多维随机变量函数的分布</h2>
+<h3 id="_14">多维离散型随机变量函数的分布</h3>
+<p>假设确定了 $X$ 和 $Y$ 的分布，如何确定 $Z=X+Y$ 的分布？
+$$
+P(Z=r)=P(X+Y=r) =\sum_{i=0}^r P(X=i,Y=r-i)
+$$
+进一步，当 $X$ 与 $Y$ 相互独立时，则
+$$
+P(Z=r)=\sum_{i=0}^r P(X=i)P(Y=r-i)
+$$
+如果对 Poisson 分布分析，假设 $X_1,X_2 \sim P(\lambda)$，$X=X_1+X_2$，则：
+$$
+\begin{aligned}
+P(X=r)&amp;=\sum_{i=0}^r P(X_1=i) P(X_2=r-i)\
+&amp;= \sum_{i=0}^r \frac{\lambda^i}{i!} e^{-\lambda} \frac{\lambda^{r-i}}{(r-i)!} e^{-\lambda}\
+&amp;=e^{-2\lambda} \sum_{i=0}^r \frac{\lambda^r}{i! (r-i)!}\
+&amp;= e^{-2\lambda} \frac{1}{r!} \sum_{i=0}^r C_r^i \lambda^r \
+&amp;= \frac{\lambda^r(1+1)^r}{r!} e^{-2r}\
+&amp;= \frac{(2\lambda)^r}{r!} e^{-2r}
+\end{aligned} \sim P(2\lambda)
+$$
+因此，Poisson 分布具有可加性，即 $X \sim P(\lambda_1), Y\sim P(\lambda_2)$，则 $X+Y \sim P(\lambda_1 +\lambda_2)$.</p>
+<p>同理，二项分布也具有可加性，即 $X \sim B(n,p),Y\sim B(m,p)$，则 $X+Y \sim B(n+m,p)$.</p>
+<h3 id="_15">多维连续型随机变量函数的分布</h3>
+<p><strong>正态随机变量的分布</strong></p>
+<p>若 $(X,Y) \sim N(\mu_1, \sigma_1^2,\mu_2,\sigma_2^2, \rho)$，则：
+$$
+X+Y \sim N(\mu_1+\mu_2,\sigma_1^2+2\rho \sigma_1\sigma_2+\sigma_2^2)
+$$
+特别地，若 $X,Y$ 相互独立，则 $\rho=0$，……</p>
+<p>若 $X_1,X_2,\cdots,X_n$ 相互独立，$X_i \sim N(\mu_i,\sigma_i^2),i=1,2,\cdots,n$，则：
+$$
+\sum_{i=1}^n X_i \sim N\left(\sum_{i=1}^n \mu_i,\sum_{i=1}^n \sigma_i^2\right)
+$$</p>
+<hr />
+<p><strong>和的分布 $\boldsymbol {Z=X+Y}$</strong></p>
+<p>设 $X$ 和 $Y$ 的联合密度为 $f(x,y)$，求 $Z=X+Y$ 的概率密度？</p>
+<p>从分布函数的定义出发，先去求分布函数，然后再求导。
+$$
+F_Z(z)=P(Z \le z)=P(X+Y\le z)=\int_{-\infin}^{+\infin} \mathrm d x \int_{-\infin}^{z-x} f(x,y)\mathrm d y
+$$
+可以得到：
+$$
+f_Z(z)=\int_{-\infin}^{+\infin} f(x,z-x) \mathrm d x
+$$
+或：
+$$
+f_Z(z)=\int_{-\infin}^{+\infin} f(z-y,y)\mathrm d y
+$$
+直观理解：一条线 $x+y=z$ 上的概率。</p>
+<p><strong>推广</strong> 求 $Z=aX+bY+c$ 的概率密度？沿用相同的思路，直线是 $z=ax+by+c$，固定 $x$，则
+$$
+y=\frac{z-ax-c}{b}
+$$
+因此，
+$$
+\boxed{f_Z(z)=\underbrace{\frac{1}{|b|}}<em>{y'}\int</em>{-\infin}^{+\infin} f\left(x,\frac{z-ax-c}{b}\right)\mathrm d x}
+$$</p>
+<hr />
+<p><img alt="image-20231027210323354" src="https://fastly.jsdelivr.net/gh/GaisaiYuno/imghost/202310272110550.png" /></p>
+<p>首先，可以判断出独立分布，然后代入公式：
+$$
+f_Z(z)=\int_{-\infin}^{+\infin} f(x,z-x)\mathrm d x
+$$
+当 $0&lt;z&lt;1$，$x\in(0,z)$ 的时候 $f(x,y)=1$，因此 $f_Z(z)=z$.</p>
+<p>当 $1\le z&lt;2$，$x\in (z-1,1)$ 时候 $f(x,y)=1$，因此 $f_Z(z)=2-z$.</p>
+<p>其余？$f_Z(z)=0$.</p>
+<hr />
+<p>**商的分布 $\boldsymbol {Z=X/Y}$ **
+$$
+F_Z(z)=\cdots=\iint_{x/y \le z} f(x,y)\mathrm d x\mathrm d y
+$$
+重点是积分区域怎么画？将 $z$ 看为常数，则积分区域为：</p>
+<p><img alt="image-20231027211614862" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20231027211614862.png" /></p>
+<p>分为两部分考虑：
+$$
+=\int_0^{+\infin}  \left(\int_{-\infin}^{yz} f(x,y)\mathrm d x\right)\mathrm d y+\int_{-\infin}^0 \left(\int_{yz}^{+\infin} f(x,y)\mathrm d x\right)\mathrm d y
+$$
+然后再对 $z$ 求导：
+$$
+=\int_0^{+\infin} f\left(yz,y\right)y\mathrm d y - \int_{-\infin}^0 f(yz,y)y\mathrm d  y\
+=\int_{-\infin}^{+\infin} f(yz,y)|y|\mathrm d  y
+$$
+能否猜测，有如下规律，</p>
+<ol>
+<li>将随机变量以具体的值替代，即 $X \to x, Y \to y,Z \to z$.</li>
+<li>然后将结果变量视为常数，将一个输入变量用其它输入变量表示，如 $x$ 用 $y$ 表示，则 $x=yz$.</li>
+<li>代入概率密度函数，并且乘上被代入变量对输出变量的导数。</li>
+</ol>
+<hr />
+<p><strong>平方和的分布 $\boldsymbol {Z=X^2+Y^2}$</strong></p>
+<p>先讨论 $z \ge 0$ 的情况：
+$$
+F_Z(z)=\iint_{x^2+y^2 \le z} f(x,y)\mathrm d  x\mathrm d y
+$$
+令 $x=r\cos\theta,y=r\sin\theta,\mathrm d x\mathrm d y=r\mathrm d r\mathrm d \theta$.</p>
+<p>则替换后，形成：
+$$
+\int_0^{2\pi} \mathrm d \theta\int_0^{\sqrt{z}} f(r\cos\theta,r\sin\theta)r\mathrm d r
+$$
+对 $z$ 求导：
+$$
+f_Z(z)= \int_0^{2\pi}\mathrm d \theta \cdot \frac{1}{2} f(\sqrt{z} \cos\theta,\sqrt{z}\sin\theta)
+$$
+然后，$z&lt;0$ 的情况，显然 $f_Z(z)=0$.</p>
+<p>例题：$X \sim N(0,1),Y\sim N(0,1)$，$X,Y$ 相互独立，$Z=X^2+Y^2$，则：
+$$
+f(X=x)=\frac{1}{\sqrt{2\pi}} e^{-x^2/2}
+$$</p>
+<p>$$
+f_Z(z)=\int_0^{2\pi}\mathrm d \theta \cdot \frac{1}{2} \frac{1}{2\pi} e^{-z^2/2}=\frac{1}{2} e^{-z^2/2}
+$$</p>
+<p>（当 $z\ge 0$）</p>
+<p>服从自由度为 2 的 $\chi^2$ 分布，卡方分布.</p>
+<hr />
+<p><strong>极值分布</strong></p>
+<h3 id="_16">多维随机变量函数的联合分布</h3>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

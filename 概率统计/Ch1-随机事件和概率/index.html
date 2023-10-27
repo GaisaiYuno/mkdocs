@@ -1,0 +1,1010 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../Ch2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Ch1 随机事件和概率 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch1 随机事件和概率
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    概率统计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            概率统计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ch1 随机事件和概率
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ch1 随机事件和概率
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    随机事件及其运算
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件及其运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    随机试验和随机事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    随机事件之间的关系和运算
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件之间的关系和运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    包含关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    和事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    积事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    差事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    互不相容事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    对立事件（或互逆事件）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    集合运算律
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    随机事件的概率
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件的概率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    频率和概率
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    古典概型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    几何概型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    概率的基本性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    条件概率
+  </a>
+  
+    <nav class="md-nav" aria-label="条件概率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    条件概率
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    乘法公式
+  </a>
+  
+    <nav class="md-nav" aria-label="乘法公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    完备事件组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    全概率公式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bayes" class="md-nav__link">
+    Bayes 公式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    随机事件的独立性
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ch2 随机变量及其分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch3-%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ch3 多维随机变量及其分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    随机事件及其运算
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件及其运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    随机试验和随机事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    随机事件之间的关系和运算
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件之间的关系和运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    包含关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    和事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    积事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    差事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    互不相容事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    对立事件（或互逆事件）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    集合运算律
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    随机事件的概率
+  </a>
+  
+    <nav class="md-nav" aria-label="随机事件的概率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    频率和概率
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    古典概型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    几何概型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    概率的基本性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    条件概率
+  </a>
+  
+    <nav class="md-nav" aria-label="条件概率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    条件概率
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    乘法公式
+  </a>
+  
+    <nav class="md-nav" aria-label="乘法公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    完备事件组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    全概率公式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bayes" class="md-nav__link">
+    Bayes 公式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    随机事件的独立性
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Ch1 随机事件和概率</h1>
+
+<h2 id="_1">随机事件及其运算</h2>
+<h3 id="_2">随机试验和随机事件</h3>
+<p><strong>随机试验</strong></p>
+<ul>
+<li>可在相同条件下重复进行；</li>
+<li>所有可能结果不止一个，而且在试验之前应该是已知的；</li>
+<li>每次试验后所得到的结果应该在已知所有可能结果中， 并且事先无法预知会出现哪个结果.</li>
+</ul>
+<p><strong>随机现象</strong></p>
+<ul>
+<li>在一次观察或试验中其结果是具有随机性的</li>
+<li>在大量重复观察或试验中，出现的结果有一定的规律性 （称为统计规律性）</li>
+</ul>
+<p><strong>本课程的主要研究问题之一</strong></p>
+<p>随机试验中某些可能发生，也可能不发生的事件（随机事件）发生的可能性的大小（概率）</p>
+<ul>
+<li>随机试验 $E$ 所有可能的结果组成的集合称为样本空间 $\Omega$。</li>
+<li>样本空间的元素，即 $E$ 的直接结果（基本事件），称为样本点，记为 $\omega$。$\Omega = {\omega}$. 每次试验必定发生且只可能发生一个基本事件。</li>
+<li>
+<p>$\Omega$ 的子集称为随机事件，记为 $A,B,\cdots,$ 它是满足某些条件的样本点组成的集合。随机事件发生 —— 组成随机事件的一个样本点发生。</p>
+</li>
+<li>
+<p>必然事件 全体样本点组成的事件。记为 $\Omega$，每次试验必定发生的事件。</p>
+</li>
+<li>不可能事件 不包含任何样本点的事件。记为 $\empty$，每次试验不发生的事件。</li>
+</ul>
+<h3 id="_3">随机事件之间的关系和运算</h3>
+<h4 id="_4">包含关系</h4>
+<p><img alt="image-20230911103520904" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911103520904.png" /></p>
+<h4 id="_5">和事件</h4>
+<p><img alt="image-20230911103547868" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911103547868.png" /></p>
+<h4 id="_6">积事件</h4>
+<p><img alt="image-20230911103651686" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911103651686.png" /></p>
+<h4 id="_7">差事件</h4>
+<p><img alt="image-20230911103709584" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911103709584.png" />
+$$
+A-B = A\overline{B}= A-AB
+$$</p>
+<h4 id="_8">互不相容事件</h4>
+<p><img alt="image-20230911103732200" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911103732200.png" /></p>
+<h4 id="_9">对立事件（或互逆事件）</h4>
+<p><img alt="image-20230911104306163" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911104306163.png" /></p>
+<h4 id="_10">集合运算律</h4>
+<p><img alt="image-20230911104416184" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911104416184.png" /></p>
+<p><img alt="image-20230911104425725" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911104425725.png" /></p>
+<p>化简 $\overline{(\overline{A}\overline{B}\cup C)\overline{AC}}$
+$$
+=\overline{\overline{A}\overline{B}\cup C} \cup (AC)
+\
+=(\overline{\overline{A}\overline{B}} \cap \overline{C}) \cup (AC)\
+=(A\cup B) \cap \overline{C} \cup AC
+\
+=A(C\cup\overline{C}) \cup (B\overline{C})\
+=A\Omega \cup(B\overline{C})=A\cup B\overline{C}
+$$</p>
+<h2 id="_11">随机事件的概率</h2>
+<h3 id="_12">频率和概率</h3>
+<p>随机事件 $A$ 发生可能性大小的数值度量，称为 $A$ 的 <strong>概率</strong>，记为 $P(A)$.</p>
+<p>设在 $n$ 次重复试验中，事件 $A$ 发生了 $m$ 次，则称 $\displaystyle f_n(A)=\frac{m}{n}$ 为事件 $A$ 发生的 <strong>频率</strong>。</p>
+<p><strong>频率的性质</strong></p>
+<ul>
+<li>$0 \le f_n(A) \le 1$ 非负性</li>
+<li>$f_n(\Omega)=1$ 规范性</li>
+<li>随机事件 $A,B$ 互斥，则 $f_n(A \cup B) = f_n(A)+f_n(B)$ 可加性</li>
+<li>随机事件 $A_1 \sim A_n$ 两两互斥，则 $f_n (\cup_{i=1}^n A_i)=\sum_{i=1}^n f_n(A_i)$</li>
+<li>$\lim_{n \to \infin} f_n(A)=P(A)$ 稳定性</li>
+</ul>
+<p><strong>概率的公理化定义</strong></p>
+<ul>
+<li>非负性 $\forall A \sub \Omega , P(A) \ge 0$.</li>
+<li>归一性 $P(\Omega)=1$.</li>
+<li>可列可加性 $P(\cup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i)$，$A_1 \sim A_n$ 两两互斥</li>
+</ul>
+<h3 id="_13">古典概型</h3>
+<p><img alt="image-20230911112416959" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911112416959.png" /></p>
+<p>解：
+$$
+\Omega = {(i,j) ; i=1,2,\cdots,6,j=1,2,\cdots,6}
+$$</p>
+<p>$$
+P(A)=\frac{3}{36}=\frac{1}{12},P(B)=\frac{4}{36}=\frac{1}{9}
+$$</p>
+<p><img alt="image-20230911113001644" src="C:\Users\Steven Meng\AppData\Roaming\Typora\typora-user-images\image-20230911113001644.png" /></p>
+<p>放回：
+$$
+N=(a+b)^n\quad M=C_m^ka^k b^{m-k}
+$$</p>
+<p>$$
+P(A)=\frac{M}{N}=C_m^k \left(\frac{a}{a+b}\right)^k\left(\frac{b}{a+b}\right)^{m-k}
+$$</p>
+<p>$$
+P(B)=\frac{N^k-C_N^k k!}{N^k}
+$$</p>
+<p><img alt="image-20230912162512290" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230912162512290.png" /></p>
+<p><img alt="image-20230912162605024" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230912162605024.png" /></p>
+<p>1-生日都不相同的概率</p>
+<p><img alt="image-20230912162739309" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230912162739309.png" /></p>
+<h3 id="_14">几何概型</h3>
+<p>设样本空间对应于一个有限区域 $\Omega$ ，若样本点落入 $\Omega$ 内任何子区域 $G$ 中的概率与区域 $G$ 的测度成正比，则 样本点落入 $G$ 内的概率为
+$$
+P(A)=\frac{G \text { 的测度 }}{\Omega \text { 的测度 }}
+$$
+<img alt="image-20230912163045585" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230912163045585.png" /></p>
+<p><img alt="image-20230912163053355" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230912163053355.png" /></p>
+<h3 id="_15">概率的基本性质</h3>
+<ul>
+<li>
+<p>$P(\varnothing)=\mathbf{0}$</p>
+</li>
+<li>
+<p><strong>有限可加性</strong> 设 $A_1, A_2, \cdots, A_n$ 两两互斥，则 $P\left(\cup_{i=1}^n A_i\right)=\sum_{i=1}^n P\left(A_i\right)$</p>
+</li>
+<li>
+<p>$P(\bar{A})=1-P(A) \Rightarrow P(A) \leq 1 \Rightarrow$</p>
+</li>
+<li>
+<p>若 $A \subset B$ ，则 $P(B-A)=P(B)-P(A) \Rightarrow P(A) \leq P(B)$</p>
+</li>
+<li>
+<p>对任意两个事件 $A, B$ ，有 $P(B-A)=P(B)-P(A B)$</p>
+</li>
+<li>
+<p><strong>加法公式</strong> 对任意两个事件 $A, B$ ，有 $P(A \cup B)=P(A)+P(B)-P(A B)$</p>
+</li>
+</ul>
+<p>$$
+P(A \cup B) \leq P(A)+P(B)
+$$</p>
+<ul>
+<li>
+<p><strong>加法公式的推广</strong>
+  $$
+  P(A\cup B\cup C)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC)
+  $$</p>
+</li>
+<li>
+<p><strong>一般情况（容斥原理）</strong>
+  $$
+  P\left(\cup_{i=1}^n A_i\right)=\sum_{i=1}^n P(A_i)-\sum_{1\le i &lt;j \le n} P(A_iA_j)\+\sum_{1\le i&lt;j&lt;k\le n} P(A_iA_jA_k)+\cdots+(-1)^{n-1}P(A_1\cdots A_n)
+  $$
+  <img alt="image-20230914085002469" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914085002469.png" />
+  $$
+  P(A_{i_1}A_{i_2}\cdots A_{i_k})=\frac{(n-k)!}{n!}\quad (-1)^{k-1} \sum P=(-1)^{k-1}\frac{1}{k!}
+  $$
+  <img alt="image-20230914085435059" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914085435059.png" />
+  $$
+  P(A)=P(A_1)+P(A_2)-P(A_1 \cap A_2)
+  $$</p>
+</li>
+</ul>
+<h2 id="_16">条件概率</h2>
+<h3 id="_17">条件概率</h3>
+<p>在事件 $B$ 发生的条件下求事件 $A$ 发生的概率，记作 $P(A\mid B)$，一般地，$P(A \mid B) \not= P(A)$.</p>
+<p><img alt="image-20230914091238746" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914091238746.png" /></p>
+<p><img alt="image-20230914090915358" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914090915358.png" /></p>
+<p><img alt="image-20230914091350474" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914091350474.png" /></p>
+<h3 id="_18">乘法公式</h3>
+<p>$$
+P(AB)=P(A)P(B\mid A) \quad (P(A)&gt;0)\
+P(AB)=P(B)P(A\mid B) \quad (P(B)&gt;0)
+$$</p>
+<p>三个的情况：
+$$
+P(A_1A_2)=P(A_1)P(A_2\mid A_1)\
+P(A_1A_2A_3)=P(A_1A_2)P(A_3 \mid A_1A_2)=P(A_1)P(A_2\mid A_1)P(A_3 \mid A_1A_2)
+$$
+<img alt="image-20230914091422327" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914091422327.png" /></p>
+<ol>
+<li>$P(A_1A_2)=P(A_1) P(A_2 \mid A_1)$.</li>
+<li>$P(A_2)=P(A_1A_2 \cup \overline{A_1}A_2)=P(A_1A_2)+P(\overline{A_1}A_2)$,（讨论 $A_1$ 发生与否 ）</li>
+<li>$P(\overline{A_1}\overline{A_2}A_3)$.</li>
+<li>$\displaystyle P(\overline{A_1} \mid A_2)=\frac{P(\overline{A_1}A_2)}{P(A_2)}=\frac{P(\overline{A_1})P(A_2 \mid \overline{A_1})}{P(A_1A_2)+P(\overline{A_1}A_2)}$ 贝叶斯公式</li>
+</ol>
+<p><img alt="image-20230914092023767" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914092023767.png" /></p>
+<p><img alt="image-20230914092115466" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914092115466.png" /></p>
+<p><img alt="image-20230914092314013" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914092314013.png" />
+$$
+P(A)=\sum_{i=0\sim 3}P(B_i) \times P(A \mid B_i)
+$$
+因为 $\Omega = \cup_{i=0}^3 B_i$ 且 $B_i B_j = \emptyset$.</p>
+<h4 id="_19">完备事件组</h4>
+<p><img alt="image-20230914092607867" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914092607867.png" /></p>
+<h3 id="_20">全概率公式</h3>
+<p><img alt="image-20230914092652032" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230914092652032.png" />
+$$
+A=\cup_{i=1}^n AB_i, (AB_i)(AB_j)=\empty
+$$</p>
+<p>$$
+P(A)=P\left(\cup_{i=1}^n AB_i\right)=\sum_{i=1}^n P(AB_i)=\sum_{i=1}^n P(B_i)P(A\mid B_i)
+$$</p>
+<h3 id="bayes">Bayes 公式</h3>
+<p>如果我们关心的事件 $A$ 满足 $P(A)&gt;0$，$B_1,B_2,\cdots,B_n$ 是可能导致随机事件 $A$ 发生的所有因素，现在如果已经知道 $A$ 发生，不难求解导致 $A$ 发生的因素 $B_i$ 的概率：
+$$
+P(B_i \mid A) = \frac{P(AB_i)}{P(A)} = \frac{P(B_i)P(A \mid B_i)}{\sum_{j=1}^n P(B_j) P(A \mid B_j)},i = 1,2,\cdots,n
+$$</p>
+<ul>
+<li>$P(B_i)$：先验概率；</li>
+<li>$P(B_i \mid A)$：后验概率。</li>
+</ul>
+<h2 id="_21">随机事件的独立性</h2>
+<p>若 $P(AB)=P(A)P(B)$，则事件 $A$ 与事件 $B$ 相互独立。</p>
+<p>若 $A$ 与 $B$ 相互独立，则 $P(A)=P(A\mid B),P(B)=P(B \mid A)$.</p>
+<p>若 $A$ 与 $B$ 相互独立，则 $A$ 与 $\overline{B}$ 相互独立。</p>
+<p><img alt="image-20230921093440346" src="C:\Users\steve\AppData\Roaming\Typora\typora-user-images\image-20230921093440346.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
